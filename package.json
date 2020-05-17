@@ -26,5 +26,11 @@
   "files": [
     "src",
     "dist"
-  ]
+  ],
+  "author": "Kalan <kjj6198@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kjj6198/svelte-data-table.git"
+  }
 }
