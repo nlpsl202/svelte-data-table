@@ -47,3 +47,4 @@ export const config = {
 - [ ] Event communication
 - [ ] a11y support
 - [ ] test
+- [ ] TypeScript support

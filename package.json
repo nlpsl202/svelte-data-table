@@ -1,5 +1,6 @@
 {
   "version": "0.0.1",
+  "description": "A simple, small, light-weight but powerful data table in svelte.",
   "name": "svelte-data-table",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
