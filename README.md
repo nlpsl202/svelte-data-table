@@ -1,6 +1,6 @@
 ## svelte-data-table
 
-A simple but powerful data table in svelte.
+A simple, small, light-weight but powerful data table in svelte.
 
 ## Usage
 
