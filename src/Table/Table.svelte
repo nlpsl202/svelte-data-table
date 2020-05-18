@@ -1,7 +1,7 @@
 <script>
-  import TableHeadColumn from './TableHeadColumn.svelte';
-  import TableCell from './TableCell.svelte';
-  import { tick } from 'svelte';
+  import TableHeadColumn from "./TableHeadColumn.svelte";
+  import TableCell from "./TableCell.svelte";
+  import { tick } from "svelte";
   export let config;
   export let data;
   export let title;
@@ -24,11 +24,11 @@
           return d[field];
         };
 
-      if (sortType === 'asc') {
+      if (sortType === "asc") {
         sortedData = originalData.sort((a, b) =>
           comparator(accessor(a), accessor(b))
         );
-      } else if (sortType === 'desc') {
+      } else if (sortType === "desc") {
         sortedData = originalData.sort((a, b) =>
           comparator(accessor(b), accessor(a))
         );
@@ -110,6 +110,8 @@
             data={item}
             formatter={config[itemKey].formatter}
             accessor={config[itemKey].accessor}
+            config={config[itemKey]}
+            component={config[itemKey].component}
             align={config[itemKey].align || 'left'}
             field={itemKey} />
         {/each}
