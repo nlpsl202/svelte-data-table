@@ -94,6 +94,11 @@
             data={item}
             formatter={config[itemKey].formatter}
             accessor={config[itemKey].accessor}
+            config={config[itemKey]}
+            props={config[itemKey].props || function() {
+                return {};
+              }}
+            component={config[itemKey].component}
             align={config[itemKey].align || 'left'}
             field={itemKey} />
         {/each}

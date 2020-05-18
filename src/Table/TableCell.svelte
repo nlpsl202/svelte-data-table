@@ -6,6 +6,9 @@
   export let accessor;
   export let align;
   export let hideMobile;
+  export let config;
+  export let component;
+  export let props;
 </script>
 
 <style>
@@ -42,7 +45,12 @@
     {@html formatter(accessor(data))}
   {:else if formatter}
     {@html formatter(data[field])}
-  {:else if type === 'image'}
-    <img src={`/images${data[field]}`} class="table-image" alt="icon" />
+  {:else if component}
+    <svelte:component this={component} {...props(data)} />
+  {:else if type === 'image' && typeof config.getSrc === 'function'}
+    <img
+      src={config.getSrc(data)}
+      class="table-image"
+      alt={typeof config.getAlt === 'function' ? config.getAlt(data) : 'image'} />
   {:else if type === 'text'}{data[field]}{/if}
 </td>
