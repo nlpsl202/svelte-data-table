@@ -8,6 +8,7 @@
   export let hideMobile;
   export let config;
   export let component;
+  export let props;
 </script>
 
 <style>
@@ -46,7 +47,7 @@
   {:else if formatter}
     {@html formatter(data[field])}
   {:else if component}
-    <svelte:component this={component} />
+    <svelte:component this={component} {...props(data)} />
   {:else if type === 'image' && typeof config.getSrc === 'function'}
     <img
       src={config.getSrc(data)}
