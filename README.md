@@ -1,4 +1,4 @@
-## svelte-data-table
+## svelte-data-tabu
 
 A simple, small, light-weight but powerful data table in svelte.
 
@@ -37,8 +37,8 @@ export const config = {
 ## TODOs
 
 - [ ] pagination support
-- [ ] Fixed header
-- [ ] sortable
+- [x] Fixed header
+- [x] sortable
 - [ ] slot
 - [ ] expanded view
 - [ ] group
