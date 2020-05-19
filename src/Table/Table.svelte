@@ -6,6 +6,7 @@
   export let pinToTop = false;
   export let data;
   export let title;
+  export let striped;
   let sortType = null;
   let tableRef;
   $: tableHeads = Object.keys(config);
@@ -71,7 +72,7 @@
     background-color: #ddd;
   }
 
-  .tr:nth-child(even) {
+  .striped .tr:nth-child(even) {
     background-color: #efefef;
   }
 </style>
@@ -85,7 +86,7 @@
     </caption>
   {/if}
   <TableHead {tableRef} {tableHeads} {config} onSort={handleSort} {pinToTop} />
-  <tbody>
+  <tbody class:striped>
     {#each sortedData || data as item, i}
       <tr class="tr">
         {#each Object.keys(config) as itemKey}
