@@ -125,19 +125,19 @@
     border-width: 0 5px 5px 5px;
     border-color: transparent transparent #999;
   }
+  .none > span:before {
+    display: block;
+    top: calc(50% - 5px);
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent #999;
+  }
 
   .none > span:after {
     display: block;
     content: "";
-    bottom: 30%;
+    top: calc(50% + 3px);
     border-width: 5px 5px 0px 5px;
     border-color: #999 transparent transparent transparent;
-  }
-  .none > span:before {
-    display: block;
-    top: 30%;
-    border-width: 0 5px 5px 5px;
-    border-color: transparent transparent #999;
   }
 </style>
 
