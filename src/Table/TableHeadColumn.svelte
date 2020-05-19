@@ -146,7 +146,7 @@
   data-field={field}
   aria-sort={sortable && currentSortType}
   tabindex={sortable ? '0' : null}
-  aria-label={`${name}: activate to sort column ${getSortName(currentSortType)}`}
+  aria-label={sortable ? `${name}: activate to sort column ${getSortName(currentSortType)}` : null}
   class={className}
   class:hideMobile
   class:desc={sortable && currentSortType === 'desc'}
