@@ -6,7 +6,6 @@
   export let pinToTop = false;
   export let data;
   export let title;
-  export let striped;
   let sortType = null;
   let tableRef;
   $: tableHeads = Object.keys(config);
@@ -72,7 +71,7 @@
     background-color: #ddd;
   }
 
-  .striped .tr:nth-child(even) {
+  .tr:nth-child(even) {
     background-color: #efefef;
   }
 </style>
@@ -86,23 +85,25 @@
     </caption>
   {/if}
   <TableHead {tableRef} {tableHeads} {config} onSort={handleSort} {pinToTop} />
-  <tbody class:striped>
+  <tbody>
     {#each sortedData || data as item, i}
       <tr class="tr">
         {#each Object.keys(config) as itemKey}
-          <TableCell
-            hideMobile={config[itemKey].hideMobile}
-            type={config[itemKey].type}
-            data={item}
-            formatter={config[itemKey].formatter}
-            accessor={config[itemKey].accessor}
-            config={config[itemKey]}
-            props={config[itemKey].props || function() {
-                return {};
-              }}
-            component={config[itemKey].component}
-            align={config[itemKey].align || 'left'}
-            field={itemKey} />
+          {#if !config[itemKey].disabled}
+            <TableCell
+              hideMobile={config[itemKey].hideMobile}
+              type={config[itemKey].type}
+              data={item}
+              formatter={config[itemKey].formatter}
+              accessor={config[itemKey].accessor}
+              config={config[itemKey]}
+              props={config[itemKey].props || function() {
+                  return {};
+                }}
+              component={config[itemKey].component}
+              align={config[itemKey].align || 'left'}
+              field={itemKey} />
+          {/if}
         {/each}
       </tr>
     {/each}

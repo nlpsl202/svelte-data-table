@@ -52,5 +52,9 @@
       src={config.getSrc(data)}
       class="table-image"
       alt={typeof config.getAlt === 'function' ? config.getAlt(data) : 'image'} />
-  {:else if type === 'text'}{data[field]}{/if}
+  {:else if type === 'text'}
+    {data[field]}
+  {:else if type === 'url'}
+    <a href={data["url"]} target="_blank">{data["title"]}</a>
+  {/if}
 </td>

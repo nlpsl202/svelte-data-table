@@ -70,13 +70,15 @@
 <thead class="thead floating" bind:this={floatingTh} class:shouldPinToTop>
   <tr>
     {#each tableHeads as head}
-      <TableHeadColumn
-        hideMobile={config[head].hideMobile}
-        on:sort={onSort}
-        sortable={config[head].sortable}
-        field={head}
-        name={config[head].name}
-        align={config[head].align} />
+      {#if !config[head].disabled}
+        <TableHeadColumn
+          hideMobile={config[head].hideMobile}
+          on:sort={onSort}
+          sortable={config[head].sortable}
+          field={head}
+          name={config[head].name}
+          align={config[head].align} />
+      {/if}
     {/each}
   </tr>
 </thead>
@@ -84,13 +86,15 @@
 <thead class="thead" use:pin={{ pinToTop }}>
   <tr>
     {#each tableHeads as head}
-      <TableHeadColumn
-        hideMobile={config[head].hideMobile}
-        on:sort={onSort}
-        sortable={config[head].sortable}
-        field={head}
-        name={config[head].name}
-        align={config[head].align} />
+      {#if !config[head].disabled}
+        <TableHeadColumn
+          hideMobile={config[head].hideMobile}
+          on:sort={onSort}
+          sortable={config[head].sortable}
+          field={head}
+          name={config[head].name}
+          align={config[head].align} />
+      {/if}
     {/each}
   </tr>
 </thead>

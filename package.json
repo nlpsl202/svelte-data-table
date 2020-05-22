@@ -1,7 +1,7 @@
 {
-  "version": "0.1.2",
+  "version": "0.0.1",
   "description": "A simple, small, light-weight but powerful data table in svelte.",
-  "name": "svelte-data-tabu",
+  "name": "@nlpsl202/svelte-data-tabu",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
@@ -32,5 +32,6 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:kjj6198/svelte-data-table.git"
-  }
+  },
+  "contributors": "nlpsl202<qsc367899@gmail.com>"
 }
